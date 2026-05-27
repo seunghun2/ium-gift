@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이음기프트 캠퍼스 파트너 — 학생회용 전단지</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+/* ================================================================
+   이음기프트 학생회용 전단지 — A4 양면 인쇄용
+   210mm × 297mm · 코랄+오렌지 컬러
+   ================================================================ */
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --coral: #E8553D;
+    --coral-deep: #C43E29;
+    --coral-light: #F2766A;
+    --orange: #F28C38;
+    --orange-light: #FABA6A;
+    --bg: #FFFFFF;
+    --bg-soft: #FFF7F4;
+    --bg-warm: #FFF0EB;
+    --text: #1A1A1A;
+    --text-sub: #4A5568;
+    --text-muted: #8A94A6;
+    --line: #F0E0DA;
+    --radius: 8px;
+}
+
+html, body {
+    font-family: 'Pretendard Variable', Pretendard, -apple-system, 'Apple SD Gothic Neo', sans-serif;
+    font-size: 11pt;
+    line-height: 1.5;
+    color: var(--text);
+    background: #E8E8E8;
+    -webkit-font-smoothing: antialiased;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+/* ================================================================
+   PAGE CONTAINER
+   ================================================================ */
+.page {
+    width: 210mm;
+    height: 297mm;
+    margin: 20px auto;
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+}
+
+.page + .page {
+    page-break-before: always;
+}
+
+@media print {
+    body { background: white; }
+    .page {
+        margin: 0;
+        box-shadow: none;
+    }
+}
+
+/* ================================================================
+   FRONT PAGE
+   ================================================================ */
+.front {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
+}
+
+/* --- Top Bar --- */
+.top-bar {
+    background: var(--coral);
+    color: white;
+    padding: 14px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 10pt;
+    font-weight: 600;
+}
+
+.top-bar .badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.5px;
+}
+
+.top-bar .badge i {
+    width: 16px;
+    height: 16px;
+}
+
+.top-bar .divider-dot {
+    opacity: 0.5;
+    margin: 0 8px;
+}
+
+/* --- Hero Section --- */
+.hero-front {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 40px 24px;
+}
+
+.hero-eyebrow {
+    font-size: 10pt;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.3px;
+    margin-bottom: 12px;
+}
+
+.hero-front h1 {
+    font-size: 28pt;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.03em;
+    color: var(--coral-deep);
+    margin-bottom: 20px;
+}
+
+.hero-sub {
+    font-size: 13pt;
+    color: var(--text-sub);
+    line-height: 1.65;
+    margin-bottom: 8px;
+}
+
+.hero-sub strong {
+    color: var(--coral);
+    font-weight: 700;
+}
+
+/* --- Merit Block --- */
+.merit-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    padding: 0 40px;
+    margin-bottom: 28px;
+}
+
+.merit-item {
+    background: var(--bg-soft);
+    border-radius: var(--radius);
+    padding: 20px 16px;
+    text-align: center;
+}
+
+.merit-icon-wrap {
+    width: 44px;
+    height: 44px;
+    margin: 0 auto 10px;
+    background: var(--coral);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.merit-icon-wrap i {
+    width: 22px;
+    height: 22px;
+}
+
+.merit-item strong {
+    display: block;
+    font-size: 11pt;
+    font-weight: 800;
+    color: var(--coral-deep);
+    margin-bottom: 4px;
+}
+
+.merit-item p {
+    font-size: 8.5pt;
+    color: var(--text-sub);
+    line-height: 1.45;
+}
+
+/* --- Brand Strip --- */
+.brand-strip {
+    background: var(--bg-soft);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 14px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.brand-name {
+    font-size: 9pt;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+}
+
+.brand-dot {
+    width: 3px;
+    height: 3px;
+    background: var(--text-muted);
+    border-radius: 50%;
+    opacity: 0.4;
+}
+
+/* --- Bottom Bar --- */
+.bottom-bar {
+    background: var(--coral);
+    color: white;
+    padding: 16px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 10pt;
+}
+
+.bottom-bar .brand-left {
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.bottom-bar .tagline {
+    font-weight: 400;
+    opacity: 0.7;
+    font-size: 9pt;
+}
+
+/* ================================================================
+   BACK PAGE
+   ================================================================ */
+.back {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
+}
+
+.back-header {
+    background: var(--coral);
+    color: white;
+    padding: 14px 32px;
+    font-size: 10pt;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.back-header i {
+    width: 16px;
+    height: 16px;
+}
+
+.back-body {
+    flex: 1;
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* --- Section Headers --- */
+.section-title {
+    font-size: 12pt;
+    font-weight: 800;
+    color: var(--coral-deep);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.section-title i {
+    width: 18px;
+    height: 18px;
+    color: var(--orange);
+}
+
+.section-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background: var(--coral);
+    color: white;
+    border-radius: 50%;
+    font-size: 9pt;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+/* --- Usage Scenes (Section 1) --- */
+.usage-scenes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.usage-scene-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    background: var(--bg-soft);
+    border-radius: var(--radius);
+    font-size: 9pt;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.usage-scene-item i {
+    width: 18px;
+    height: 18px;
+    color: var(--coral);
+    flex-shrink: 0;
+}
+
+/* --- Steps (Section 2) --- */
+.steps-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+}
+
+.step-item {
+    text-align: center;
+    padding: 16px 12px;
+    background: var(--bg-soft);
+    border-radius: var(--radius);
+    position: relative;
+}
+
+.step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: var(--coral);
+    color: white;
+    border-radius: 50%;
+    font-size: 12pt;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.step-item strong {
+    display: block;
+    font-size: 10pt;
+    font-weight: 800;
+    color: var(--coral-deep);
+    margin-bottom: 4px;
+}
+
+.step-item p {
+    font-size: 8pt;
+    color: var(--text-sub);
+    line-height: 1.4;
+}
+
+.step-arrow {
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--coral-light);
+    font-size: 14pt;
+    font-weight: 800;
+}
+
+/* --- Price Table (Section 3) --- */
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9pt;
+}
+
+.price-table thead th {
+    background: var(--coral);
+    color: white;
+    padding: 8px 10px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 8.5pt;
+}
+
+.price-table thead th:first-child {
+    border-radius: var(--radius) 0 0 0;
+}
+.price-table thead th:last-child {
+    border-radius: 0 var(--radius) 0 0;
+}
+
+.price-table td {
+    padding: 7px 10px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: middle;
+}
+
+.price-table tr:last-child td {
+    border-bottom: none;
+}
+
+.price-table .col-price {
+    color: var(--coral);
+    font-weight: 700;
+}
+
+.price-note {
+    font-size: 7.5pt;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+/* --- Bottom Grid --- */
+.bottom-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 14px;
+    flex: 1;
+}
+
+/* Benefit Box */
+.benefit-box {
+    background: var(--coral);
+    border-radius: var(--radius);
+    padding: 18px 16px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.benefit-box .benefit-title {
+    font-size: 11pt;
+    font-weight: 800;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.benefit-box .benefit-title i {
+    width: 16px;
+    height: 16px;
+    color: var(--orange-light);
+}
+
+.benefit-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+}
+
+.benefit-list li {
+    font-size: 9pt;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    line-height: 1.4;
+}
+
+.benefit-list li::before {
+    content: '·';
+    font-weight: 800;
+    color: var(--orange-light);
+    flex-shrink: 0;
+}
+
+.benefit-note {
+    font-size: 7pt;
+    opacity: 0.6;
+    margin-top: 8px;
+    line-height: 1.4;
+}
+
+/* CTA Block */
+.cta-block {
+    background: var(--bg-warm);
+    border-radius: var(--radius);
+    padding: 18px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.cta-block .cta-title {
+    font-size: 11pt;
+    font-weight: 800;
+    color: var(--coral-deep);
+    margin-bottom: 10px;
+}
+
+.cta-kakao {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10pt;
+    font-weight: 700;
+    color: #3B1E1E;
+    background: #FEE500;
+    padding: 8px 20px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.cta-kakao i {
+    width: 16px;
+    height: 16px;
+}
+
+.cta-phone {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12pt;
+    font-weight: 800;
+    color: var(--coral);
+    margin-bottom: 4px;
+}
+
+.cta-phone i {
+    width: 16px;
+    height: 16px;
+}
+
+.cta-email {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 8.5pt;
+    color: var(--text-sub);
+    margin-bottom: 12px;
+}
+
+.cta-email i {
+    width: 13px;
+    height: 13px;
+}
+
+.qr-placeholder {
+    width: 72px;
+    height: 72px;
+    background: white;
+    border: 2px dashed var(--line);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 7pt;
+    color: var(--text-muted);
+    text-align: center;
+    line-height: 1.3;
+}
+
+/* --- Back Footer --- */
+.back-footer {
+    background: var(--coral);
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    font-size: 7.5pt;
+    opacity: 0.9;
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     PAGE 1 · 앞면
+     ============================================================ -->
+<div class="page front">
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="badge">
+            <i data-lucide="users"></i>
+            학생회 전용
+            <span class="divider-dot">·</span>
+            캠퍼스 파트너
+        </div>
+        <div style="font-weight:400; opacity:0.7; font-size:9pt;">이음기프트</div>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero-front">
+        <div class="hero-eyebrow">축제 경품 · OT 선물 · SNS 이벤트</div>
+        <h1>OT 선물 80개,<br>카톡으로 한 명씩<br>보내고 계세요?</h1>
+        <p class="hero-sub">
+            번호만 입력하면 80명한테 <strong>한 번에 발송</strong>.<br>
+            실물 경품 사서 나를 필요도 없습니다.
+        </p>
+    </div>
+
+    <!-- Merit Block -->
+    <div class="merit-block">
+        <div class="merit-item">
+            <div class="merit-icon-wrap">
+                <i data-lucide="send"></i>
+            </div>
+            <strong>대량 발송</strong>
+            <p>번호 입력 or 엑셀<br>→ 한 번에 전체 발송</p>
+        </div>
+        <div class="merit-item">
+            <div class="merit-icon-wrap">
+                <i data-lucide="package-x"></i>
+            </div>
+            <strong>재고 0</strong>
+            <p>실물 없음<br>남는 거 없음</p>
+        </div>
+        <div class="merit-item">
+            <div class="merit-icon-wrap">
+                <i data-lucide="badge-percent"></i>
+            </div>
+            <strong>시중가 이하</strong>
+            <p>B2B 특가<br>조금 더 저렴하게</p>
+        </div>
+    </div>
+
+    <!-- Brand Strip -->
+    <div class="brand-strip">
+        <span class="brand-name" style="color:#00704A; font-weight:800;">STARBUCKS</span>
+        <span class="brand-dot"></span>
+        <span class="brand-name" style="color:#FFD700; font-weight:800;">MEGA</span>
+        <span class="brand-dot"></span>
+        <span class="brand-name" style="color:#C2151D; font-weight:800;">BBQ</span>
+        <span class="brand-dot"></span>
+        <span class="brand-name" style="color:#E4002B; font-weight:800;">CU</span>
+        <span class="brand-dot"></span>
+        <span class="brand-name" style="color:#2AC1BC; font-weight:800;">배달의민족</span>
+        <span class="brand-dot"></span>
+        <span class="brand-name" style="color:#D21C5B; font-weight:800;">배스킨라빈스</span>
+        <span class="brand-dot"></span>
+        <span class="brand-name" style="color:#9EC53A; font-weight:800;">올리브영</span>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="bottom-bar">
+        <span class="brand-left">이음기프트 캠퍼스 파트너</span>
+        <span class="tagline">실물 없이, 모바일로 끝</span>
+    </div>
+
+</div>
+
+<!-- ============================================================
+     PAGE 2 · 뒷면
+     ============================================================ -->
+<div class="page back">
+
+    <!-- Back Header -->
+    <div class="back-header">
+        <i data-lucide="users"></i>
+        이음기프트 캠퍼스 파트너 — 학생회 상세 안내
+    </div>
+
+    <div class="back-body">
+
+        <!-- Section 1: Usage Scenes -->
+        <div>
+            <div class="section-title">
+                <span class="section-num">1</span>
+                이런 행사에서 쓰세요
+            </div>
+            <div class="usage-scenes">
+                <div class="usage-scene-item">
+                    <i data-lucide="tent"></i>
+                    축제 부스 이벤트 경품
+                </div>
+                <div class="usage-scene-item">
+                    <i data-lucide="mic"></i>
+                    OT · MT 미니게임 상품
+                </div>
+                <div class="usage-scene-item">
+                    <i data-lucide="share-2"></i>
+                    SNS 팔로우·공유 리워드
+                </div>
+                <div class="usage-scene-item">
+                    <i data-lucide="clipboard-list"></i>
+                    설문 참여 감사 선물
+                </div>
+                <div class="usage-scene-item">
+                    <i data-lucide="trophy"></i>
+                    학과 대회·공모전 시상
+                </div>
+                <div class="usage-scene-item">
+                    <i data-lucide="calendar-days"></i>
+                    학기 초·종강 이벤트
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Steps -->
+        <div>
+            <div class="section-title">
+                <span class="section-num">2</span>
+                3단계면 끝
+            </div>
+            <div class="steps-block">
+                <div class="step-item">
+                    <div class="step-num">1</div>
+                    <strong>사이트 접속</strong>
+                    <p>이음기프트 접속<br>예산에 맞는 상품 선택</p>
+                    <span class="step-arrow">→</span>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">2</div>
+                    <strong>결제</strong>
+                    <p>시중가 이하<br>B2B 특가 적용</p>
+                    <span class="step-arrow">→</span>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">3</div>
+                    <strong>모바일 전송</strong>
+                    <p>번호 입력 or 엑셀<br>한 번에 발송 끝</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Price Table -->
+        <div>
+            <div class="section-title">
+                <span class="section-num">3</span>
+                예산에 맞게 골라보세요
+            </div>
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>예산대</th>
+                        <th>추천 상품</th>
+                        <th>이런 행사에</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-price">2,000원대</td>
+                        <td>메가커피 아메리카노</td>
+                        <td>설문 사은품, 소규모 이벤트</td>
+                    </tr>
+                    <tr>
+                        <td class="col-price">4~5,000원대</td>
+                        <td>스타벅스 아메리카노 T</td>
+                        <td>OT 환영선물, SNS 이벤트</td>
+                    </tr>
+                    <tr>
+                        <td class="col-price">7,000원대</td>
+                        <td>CU / GS25 금액권</td>
+                        <td>축제 부스 경품</td>
+                    </tr>
+                    <tr>
+                        <td class="col-price">10,000원대</td>
+                        <td>네이버페이 포인트</td>
+                        <td>공모전·대회 시상</td>
+                    </tr>
+                    <tr>
+                        <td class="col-price">20,000원대</td>
+                        <td>BBQ 황금올리브+콜라</td>
+                        <td>축제 대상 경품</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="price-note">※ 전 상품 시중가 이하. 유효기간 30일 (단기 유효 → 할인 적용)</div>
+        </div>
+
+        <!-- Section 4: Bottom Grid -->
+        <div class="bottom-grid">
+
+            <!-- Benefit Box -->
+            <div class="benefit-box">
+                <div class="benefit-title">
+                    <i data-lucide="star"></i>
+                    학생회 전용 혜택
+                </div>
+                <ul class="benefit-list">
+                    <li>시중가 이하 B2B 특가</li>
+                    <li>1개부터 주문 가능</li>
+                    <li>축제 시즌 전담 매니저 지원</li>
+                    <li>학생회 전용 주문 페이지 제공</li>
+                </ul>
+                <div class="benefit-note">※ 유효기간 30일 (할인 적용 이유)</div>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta-block">
+                <div class="cta-title">카톡으로<br>바로 문의하세요</div>
+                <div class="cta-kakao">
+                    <i data-lucide="message-circle"></i>
+                    카카오톡 문의
+                </div>
+                <div class="cta-phone">
+                    <i data-lucide="phone"></i>
+                    1566-2373
+                </div>
+                <div class="cta-email">
+                    <i data-lucide="mail"></i>
+                    help@devnium.com
+                </div>
+                <div class="qr-placeholder">
+                    QR 코드<br>준비중
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Back Footer -->
+    <div class="back-footer">
+        이음기프트 · (주)데브늄 · 1566-2373 · help@devnium.com
+    </div>
+
+</div>
+
+<script>
+    lucide.createIcons();
+</script>
+</body>
+</html>

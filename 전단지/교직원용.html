@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이음기프트 캠퍼스 파트너 — 교직원용 전단지</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+/* ================================================================
+   이음기프트 교직원용 전단지 — A4 양면 인쇄용
+   210mm × 297mm
+   ================================================================ */
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --navy: #1B2A4A;
+    --navy-deep: #0F1A2E;
+    --navy-light: #2C3E5F;
+    --accent: #B0241F;
+    --accent-light: #D94A45;
+    --gold: #C9A94E;
+    --bg: #FFFFFF;
+    --bg-soft: #F4F6F9;
+    --bg-warm: #FAFAF7;
+    --text: #1A1A1A;
+    --text-sub: #4A5568;
+    --text-muted: #8A94A6;
+    --line: #E2E6ED;
+    --radius: 6px;
+}
+
+html, body {
+    font-family: 'Pretendard Variable', Pretendard, -apple-system, 'Apple SD Gothic Neo', sans-serif;
+    font-size: 11pt;
+    line-height: 1.5;
+    color: var(--text);
+    background: #E8E8E8;
+    -webkit-font-smoothing: antialiased;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+/* ================================================================
+   PAGE CONTAINER
+   ================================================================ */
+.page {
+    width: 210mm;
+    height: 297mm;
+    margin: 20px auto;
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+}
+
+.page + .page {
+    page-break-before: always;
+}
+
+@media print {
+    body { background: white; }
+    .page {
+        margin: 0;
+        box-shadow: none;
+    }
+}
+
+/* ================================================================
+   FRONT PAGE
+   ================================================================ */
+.front {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
+}
+
+/* --- Top Bar --- */
+.top-bar {
+    background: var(--navy);
+    color: white;
+    padding: 14px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 10pt;
+    font-weight: 600;
+}
+
+.top-bar .badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.5px;
+}
+
+.top-bar .badge i {
+    width: 16px;
+    height: 16px;
+}
+
+.top-bar .divider-dot {
+    opacity: 0.4;
+    margin: 0 8px;
+}
+
+/* --- Hero Section --- */
+.hero-front {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 40px 24px;
+}
+
+.hero-eyebrow {
+    font-size: 10pt;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.3px;
+    margin-bottom: 12px;
+}
+
+.hero-front h1 {
+    font-size: 28pt;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.03em;
+    color: var(--navy);
+    margin-bottom: 20px;
+}
+
+.hero-sub {
+    font-size: 13pt;
+    color: var(--text-sub);
+    line-height: 1.65;
+    margin-bottom: 8px;
+}
+
+.hero-sub strong {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+/* --- Merit Block --- */
+.merit-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    padding: 0 40px;
+    margin-bottom: 28px;
+}
+
+.merit-item {
+    background: var(--bg-soft);
+    border-radius: var(--radius);
+    padding: 20px 16px;
+    text-align: center;
+}
+
+.merit-icon-wrap {
+    width: 44px;
+    height: 44px;
+    margin: 0 auto 10px;
+    background: var(--navy);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.merit-icon-wrap i {
+    width: 22px;
+    height: 22px;
+}
+
+.merit-item strong {
+    display: block;
+    font-size: 11pt;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 4px;
+}
+
+.merit-item p {
+    font-size: 8.5pt;
+    color: var(--text-sub);
+    line-height: 1.45;
+}
+
+/* --- Brand Strip --- */
+.brand-strip {
+    background: var(--bg-soft);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 14px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.brand-logo {
+    height: 22px;
+    opacity: 0.7;
+    filter: grayscale(30%);
+    transition: opacity 0.2s;
+}
+
+.brand-name {
+    font-size: 9pt;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+}
+
+.brand-dot {
+    width: 3px;
+    height: 3px;
+    background: var(--text-muted);
+    border-radius: 50%;
+    opacity: 0.4;
+}
+
+/* --- Bottom Bar --- */
+.bottom-bar {
+    background: var(--navy);
+    color: white;
+    padding: 16px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 10pt;
+}
+
+.bottom-bar .brand-left {
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.bottom-bar .tagline {
+    font-weight: 400;
+    opacity: 0.7;
+    font-size: 9pt;
+}
+
+/* ================================================================
+   BACK PAGE
+   ================================================================ */
+.back {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
+}
+
+.back-header {
+    background: var(--navy);
+    color: white;
+    padding: 14px 32px;
+    font-size: 10pt;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.back-header i {
+    width: 16px;
+    height: 16px;
+}
+
+.back-body {
+    flex: 1;
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* --- Section Headers --- */
+.section-title {
+    font-size: 13pt;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.section-title i {
+    width: 18px;
+    height: 18px;
+    color: var(--accent);
+}
+
+.section-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background: var(--navy);
+    color: white;
+    border-radius: 50%;
+    font-size: 9pt;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+/* --- Compare Table --- */
+.compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9pt;
+}
+
+.compare-table thead th {
+    background: var(--navy);
+    color: white;
+    padding: 8px 10px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 8.5pt;
+}
+
+.compare-table thead th:first-child {
+    border-radius: var(--radius) 0 0 0;
+    width: 60px;
+}
+.compare-table thead th:last-child {
+    border-radius: 0 var(--radius) 0 0;
+}
+
+.compare-table td {
+    padding: 7px 10px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: middle;
+}
+
+.compare-table tr:last-child td {
+    border-bottom: none;
+}
+
+.compare-table .col-before {
+    color: var(--text-muted);
+}
+
+.compare-table .col-after {
+    color: var(--navy);
+    font-weight: 600;
+}
+
+.compare-table .col-label {
+    font-weight: 700;
+    color: var(--text);
+    font-size: 8.5pt;
+}
+
+/* --- Savings Block --- */
+.savings-box {
+    background: var(--bg-soft);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    border-left: 3px solid var(--accent);
+}
+
+.savings-title {
+    font-size: 10pt;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 8px;
+}
+
+.savings-example {
+    font-size: 9pt;
+    color: var(--text-sub);
+    line-height: 1.7;
+}
+
+.savings-example .highlight {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.savings-note {
+    font-size: 7.5pt;
+    color: var(--text-muted);
+    margin-top: 6px;
+}
+
+/* --- Bottom Grid --- */
+.bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr 0.9fr;
+    gap: 14px;
+    flex: 1;
+}
+
+/* Usage List */
+.usage-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.usage-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 6px;
+}
+
+.usage-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 8.5pt;
+    color: var(--text-sub);
+}
+
+.usage-list li i {
+    width: 14px;
+    height: 14px;
+    color: var(--navy-light);
+    flex-shrink: 0;
+}
+
+/* Benefit Box */
+.benefit-box {
+    background: var(--navy);
+    border-radius: var(--radius);
+    padding: 18px 16px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.benefit-box .benefit-title {
+    font-size: 10pt;
+    font-weight: 800;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.benefit-box .benefit-title i {
+    width: 16px;
+    height: 16px;
+    color: var(--gold);
+}
+
+.benefit-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+}
+
+.benefit-list li {
+    font-size: 8.5pt;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    line-height: 1.4;
+}
+
+.benefit-list li::before {
+    content: '·';
+    font-weight: 800;
+    color: var(--gold);
+    flex-shrink: 0;
+}
+
+.benefit-note {
+    font-size: 7pt;
+    opacity: 0.6;
+    margin-top: 8px;
+    line-height: 1.4;
+}
+
+/* CTA Block */
+.cta-block {
+    background: var(--bg-soft);
+    border-radius: var(--radius);
+    padding: 18px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.cta-block .cta-title {
+    font-size: 10pt;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 12px;
+}
+
+.cta-phone {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14pt;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 4px;
+}
+
+.cta-phone i {
+    width: 18px;
+    height: 18px;
+}
+
+.cta-hours {
+    font-size: 7.5pt;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.cta-email {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 8.5pt;
+    color: var(--text-sub);
+    margin-bottom: 14px;
+}
+
+.cta-email i {
+    width: 13px;
+    height: 13px;
+}
+
+.qr-placeholder {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border: 2px dashed var(--line);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 7pt;
+    color: var(--text-muted);
+    text-align: center;
+    line-height: 1.3;
+}
+
+/* --- Back Footer --- */
+.back-footer {
+    background: var(--navy);
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    font-size: 7.5pt;
+    opacity: 0.8;
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     PAGE 1 · 앞면
+     ============================================================ -->
+<div class="page front">
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="badge">
+            <i data-lucide="graduation-cap"></i>
+            대학 전용
+            <span class="divider-dot">·</span>
+            캠퍼스 파트너
+        </div>
+        <div style="font-weight:400; opacity:0.6; font-size:9pt;">이음기프트</div>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero-front">
+        <div class="hero-eyebrow">설문 사은품 · 축제 경품 · 복지 지급</div>
+        <h1>설문 사은품 50개,<br>카톡으로 한 명씩<br>보내고 계세요?</h1>
+        <p class="hero-sub">
+            번호만 입력하면, 50명이든 200명이든<br>
+            <strong>한 번에 발송</strong>됩니다.<br>
+            시중가보다 저렴하고, 후불 결제도 가능합니다.
+        </p>
+    </div>
+
+    <!-- Merit Block -->
+    <div class="merit-block">
+        <div class="merit-item">
+            <div class="merit-icon-wrap">
+                <i data-lucide="send"></i>
+            </div>
+            <strong>대량 발송</strong>
+            <p>번호 입력 or 엑셀 업로드<br>→ 한 번에 전체 발송</p>
+        </div>
+        <div class="merit-item">
+            <div class="merit-icon-wrap">
+                <i data-lucide="badge-percent"></i>
+            </div>
+            <strong>시중가 이하</strong>
+            <p>B2B 특가<br>건당 300~1,200원 절약</p>
+        </div>
+        <div class="merit-item">
+            <div class="merit-icon-wrap">
+                <i data-lucide="landmark"></i>
+            </div>
+            <strong>후불 결제</strong>
+            <p>학교 결제 프로세스에<br>맞춤 대응</p>
+        </div>
+    </div>
+
+    <!-- Brand Strip -->
+    <div class="brand-strip">
+        <span class="brand-name" style="color:#00704A; font-weight:800;">STARBUCKS</span>
+        <span class="brand-dot"></span>
+        <span class="brand-name" style="color:#FFD700; font-weight:800;">MEGA</span>
+        <span class="brand-dot"></span>
+        <span class="brand-name" style="color:#E4002B; font-weight:800;">CU</span>
+        <span class="brand-dot"></span>
+        <span class="brand-name" style="color:#0082CA; font-weight:800;">GS25</span>
+        <span class="brand-dot"></span>
+        <span class="brand-name" style="color:#C2151D; font-weight:800;">BBQ</span>
+        <span class="brand-dot"></span>
+        <span class="brand-name" style="color:#2AC1BC; font-weight:800;">배달의민족</span>
+        <span class="brand-dot"></span>
+        <span class="brand-name" style="color:#9EC53A; font-weight:800;">올리브영</span>
+        <span class="brand-dot"></span>
+        <span class="brand-name" style="color:#03C75A; font-weight:800;">N Pay</span>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="bottom-bar">
+        <span class="brand-left">이음기프트 캠퍼스 파트너</span>
+        <span class="tagline">실물 없이, 모바일로 끝</span>
+    </div>
+
+</div>
+
+<!-- ============================================================
+     PAGE 2 · 뒷면
+     ============================================================ -->
+<div class="page back">
+
+    <!-- Back Header -->
+    <div class="back-header">
+        <i data-lucide="graduation-cap"></i>
+        이음기프트 캠퍼스 파트너 — 상세 안내
+    </div>
+
+    <div class="back-body">
+
+        <!-- Section 1: Before/After -->
+        <div>
+            <div class="section-title">
+                <span class="section-num">1</span>
+                직접 구매 vs 이음기프트
+            </div>
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th>구분</th>
+                        <th>지금 (직접 구매)</th>
+                        <th>이음기프트</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-label">구매</td>
+                        <td class="col-before">마트·편의점 직접 방문</td>
+                        <td class="col-after">사이트에서 바로 주문</td>
+                    </tr>
+                    <tr>
+                        <td class="col-label">보관</td>
+                        <td class="col-before">사무실에 재고 쌓아둠</td>
+                        <td class="col-after">재고 없음 (모바일)</td>
+                    </tr>
+                    <tr>
+                        <td class="col-label">배부</td>
+                        <td class="col-before">현장에서 한 명씩 나눠줌</td>
+                        <td class="col-after">번호로 일괄 전송</td>
+                    </tr>
+                    <tr>
+                        <td class="col-label">남은 거</td>
+                        <td class="col-before">처분 고민</td>
+                        <td class="col-after">해당 없음</td>
+                    </tr>
+                    <tr>
+                        <td class="col-label">결제</td>
+                        <td class="col-before">개인 카드 → 영수증 정리</td>
+                        <td class="col-after">후불 결제 가능</td>
+                    </tr>
+                    <tr>
+                        <td class="col-label">가격</td>
+                        <td class="col-before">정가</td>
+                        <td class="col-after">시중가 이하 B2B 특가</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Section 2: Savings -->
+        <div>
+            <div class="section-title">
+                <span class="section-num">2</span>
+                대량 구매할수록 절약이 쌓입니다
+            </div>
+            <div class="savings-box">
+                <div class="savings-title">예시) 스타벅스 아메리카노 T 기준</div>
+                <div class="savings-example">
+                    정가 4,700원 → 이음기프트 약 4,200원 (<span class="highlight">약 500원 절약</span>)<br>
+                    100개 구매 시 → <span class="highlight">약 50,000원 절약</span><br>
+                    200개 구매 시 → <span class="highlight">약 100,000원 절약</span>
+                </div>
+                <div class="savings-note">※ 상품별 할인 폭은 상이합니다. 정확한 견적은 문의 주세요.</div>
+            </div>
+        </div>
+
+        <!-- Section 3: Bottom Grid -->
+        <div class="bottom-grid">
+
+            <!-- Usage -->
+            <div class="usage-block">
+                <div class="section-title" style="font-size:10pt;">
+                    <span class="section-num" style="width:18px;height:18px;font-size:7.5pt;">3</span>
+                    이런 업무에 활용
+                </div>
+                <ul class="usage-list">
+                    <li><i data-lucide="clipboard-list"></i> 설문·만족도 조사 사은품</li>
+                    <li><i data-lucide="calendar-days"></i> 행사·세미나 참가 보상</li>
+                    <li><i data-lucide="heart-handshake"></i> 학생 복지 지급</li>
+                    <li><i data-lucide="party-popper"></i> 교내 이벤트 경품</li>
+                    <li><i data-lucide="gift"></i> 근로장학생·조교 감사 선물</li>
+                </ul>
+            </div>
+
+            <!-- Benefit Box -->
+            <div class="benefit-box">
+                <div class="benefit-title">
+                    <i data-lucide="star"></i>
+                    캠퍼스 파트너 전용 혜택
+                </div>
+                <ul class="benefit-list">
+                    <li>시중가 이하 B2B 특가 적용</li>
+                    <li>1개부터 주문 OK</li>
+                    <li>후불 결제 지원 (협의)</li>
+                    <li>전담 매니저 1:1 배정</li>
+                    <li>대학 전용 주문 페이지 제공</li>
+                </ul>
+                <div class="benefit-note">※ 유효기간 30일 상품 기준<br>(할인가 적용의 이유입니다)</div>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta-block">
+                <div class="cta-title">지금 바로<br>상담 받으세요</div>
+                <div class="cta-phone">
+                    <i data-lucide="phone"></i>
+                    1566-2373
+                </div>
+                <div class="cta-hours">연중무휴 24시간</div>
+                <div class="cta-email">
+                    <i data-lucide="mail"></i>
+                    help@devnium.com
+                </div>
+                <div class="qr-placeholder">
+                    QR 코드<br>준비중
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Back Footer -->
+    <div class="back-footer">
+        이음기프트 · (주)데브늄 · 1566-2373 · help@devnium.com
+    </div>
+
+</div>
+
+<script>
+    lucide.createIcons();
+</script>
+</body>
+</html>

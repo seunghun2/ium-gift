@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>이음기프트 캠퍼스 파트너 — v5 프로모션 전단지</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<link rel="stylesheet" href="v3_apple.css">
+<style>
+@page{size:A4;margin:0}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  /* 블랙 계열 위계: 대분류(#111) > 중분류(#555) > 소분류/부가설명(#888) */
+  --blue:#111111; --blue-dark:#111111; --blue-deep:#111111; --blue-light:#f8f9fa;
+  --primary:#111111; --primary-on-dark:#ffffff; 
+  --ink:#111111; --ink-80:#555555; --ink-48:#888888;
+  --accent:#111111; --bg:#ffffff; 
+  --text:#333333; --sub:#555555; --muted:#888888;
+  --line:#e5e5e5; --r:8px; --gold:#C9A94E;
+  --accent-warm:#111111;
+}
+html,body{font-family:'Pretendard Variable',Pretendard,sans-serif;font-size:10pt;line-height:1.5;color:var(--text);background:#ddd;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;height:297mm;margin:16px auto;background:var(--bg);overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);display:flex;flex-direction:column}
+.page+.page{page-break-before:always}
+@media print{body{background:#fff}.page{margin:0;box-shadow:none}}
+
+/* ========== TYPOGRAPHY HIERARCHY ==========
+   H0 (brand)   : 9pt  / 700
+   H1 (headline): 22pt / 800
+   H2 (section) : 12pt / 800
+   H3 (card)    : 9pt  / 800
+   Body         : 8.5pt / 500
+   Caption      : 7.5pt / 400
+   Micro        : 7pt  / 400
+   =========================================== */
+
+/* ===== PAGE 1: FRONT ===== */
+.top-brand{background:var(--blue-deep);color:#fff;padding:10px 32px;display:flex;justify-content:space-between;align-items:center}
+.top-brand .name{font-size:9pt;font-weight:700;letter-spacing:.3px}
+.top-brand .label{font-size:7.5pt;opacity:.7}
+.top-brand .qr-wrap{display:flex;align-items:center;gap:10px}
+.top-brand .qr-bubble{background:var(--accent);color:#fff;font-size:7.5pt;font-weight:700;padding:5px 12px;border-radius:14px;white-space:nowrap;position:relative}
+.top-brand .qr-bubble::after{content:'';position:absolute;right:-5px;top:50%;transform:translateY(-50%);border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:5px solid var(--accent)}
+.top-brand .qr-box{width:36px;height:36px;background:#fff;border-radius:4px;padding:2px;display:flex;align-items:center;justify-content:center}
+.top-brand .qr-box img{width:100%;height:100%}
+
+.hero{background:linear-gradient(135deg,#EBF3FD,#D6E8FA);padding:18px 32px 14px;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
+.hero .tag{font-size:8pt;color:var(--blue);font-weight:700;margin-bottom:6px}
+.hero h1{font-size:22pt;font-weight:800;color:var(--blue-deep);line-height:1.3;letter-spacing:-.02em;margin-bottom:8px}
+.hero .sub-main{font-size:10.5pt;color:var(--sub);font-weight:500;margin-bottom:4px}
+.hero .sub-main strong{color:var(--blue-dark);font-weight:700}
+.hero .sub-detail{font-size:9pt;color:var(--muted);margin-bottom:8px}
+.hero-features{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:4px;grid-column:1/-1}
+.hero-feat{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:10px 8px;text-align:center}
+.hero-feat i{display:block;margin:0 auto 4px;width:22px;height:22px;color:var(--blue)}
+.hero-feat strong{display:block;font-size:8pt;font-weight:800;color:var(--text)}
+.hero-feat span{font-size:7.5pt;color:var(--muted)}
+
+.hero-qr{display:flex;flex-direction:column;align-items:center;gap:6px}
+.qr-bubble{background:var(--accent);color:#fff;font-size:8.5pt;font-weight:700;padding:6px 14px;border-radius:16px;white-space:nowrap;position:relative;text-align:center}
+.qr-bubble::after{content:'';position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);border-left:5px solid transparent;border-right:5px solid transparent;border-top:5px solid var(--accent);right:auto;top:auto;border-bottom:none}
+.hero-qr .qr-img{width:100px;height:100px;background:#fff;border-radius:6px;padding:4px;border:2px solid var(--blue);display:flex;align-items:center;justify-content:center}
+.hero-qr .qr-img img{width:100%;height:100%}
+.hero-qr .qr-scan{font-size:6.5pt;color:var(--muted);text-align:center}
+
+.reasons{padding:20px 32px;flex:0 0 auto}
+.reasons h2{font-size:12pt;font-weight:700;color:var(--blue-deep);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.reasons h2 i{width:18px;height:18px;color:var(--blue)}
+.reasons-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.reason{text-align:center;padding:8px 6px}
+.reason-icon-wrap{display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:6px}
+.reason .num{display:inline-flex;width:20px;height:20px;border-radius:50%;background:var(--line);color:var(--text);font-size:7.5pt;font-weight:800;align-items:center;justify-content:center}
+.reason i{display:block;width:22px;height:22px;color:var(--blue)}
+.reason strong{display:block;font-size:8pt;font-weight:800;color:var(--text);margin-bottom:2px}
+.reason p{font-size:6.5pt;color:var(--muted);line-height:1.35}
+
+.brand-section{flex:1 1 auto;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:12px 32px;background:var(--bg);overflow:hidden;gap:12px}
+.brand-section .phone-img{width:100%;max-height:260px;object-fit:contain}
+.brand-right{display:flex;flex-direction:column;gap:8px;height:100%;justify-content:center}
+.brand-right .section-label{font-size:8pt;font-weight:700;color:var(--blue-deep);margin-bottom:4px}
+.brand-tags{display:flex;flex-wrap:wrap;gap:5px}
+.brand-tags span{display:inline-block;padding:3px 10px;border:1px solid var(--line);border-radius:14px;font-size:7pt;font-weight:600;color:var(--sub);background:#fff}
+.use-list{list-style:none;display:flex;flex-direction:column;gap:0}
+.use-list li{display:flex;align-items:center;justify-content:space-between;padding:3px 0;border-bottom:1px solid var(--line);font-size:7.5pt}
+.use-list li:last-child{border-bottom:none}
+.use-list .use-left{display:flex;align-items:center;gap:5px;font-weight:700;color:var(--text)}
+.use-list .use-left i{width:14px;height:14px;color:var(--blue)}
+.use-list .use-right{color:var(--muted);font-size:6.5pt}
+
+.front-cta{background:var(--blue-deep);color:#fff;padding:14px 32px;display:flex;align-items:center;justify-content:space-between}
+.front-cta .cta-left{display:flex;align-items:center;gap:18px}
+.front-cta .trial{background:var(--accent);color:#fff;padding:7px 16px;border-radius:20px;font-size:8.5pt;font-weight:700;white-space:nowrap}
+.front-cta .contact-info{font-size:9pt;display:flex;gap:14px;align-items:center;font-weight:500}
+.front-cta .contact-info span{display:flex;align-items:center;gap:5px}
+.front-cta .contact-info i{width:16px;height:16px}
+.front-cta .qr-box{width:72px;height:72px;background:#fff;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:6.5pt;color:var(--muted);text-align:center;flex-shrink:0}
+
+/* ===== PAGE 2: BACK — all styles from v3_apple.css ===== */
+  .budget-table th, .budget-table td { text-align: center !important; }
+  h2, .stitle, .section-label { font-weight: 700 !important; }
+</style>
+</head>
+<body>
+
+<!-- ===== PAGE 1 · 앞면 ===== -->
+<div class="page">
+  <div class="top-brand">
+    <div class="name">이음기프트 — 캠퍼스 파트너</div>
+    <div class="label">대학 전용 모바일 쿠폰 솔루션</div>
+  </div>
+
+  <div class="hero">
+    <div class="hero-left">
+      <div class="tag">대학 전용 모바일 쿠폰 서비스 — 이음기프트</div>
+      <h1 style="margin-bottom:6px;">스타벅스 쿠폰이 4,000원?</h1>
+      <div class="sub-main" style="font-size:12pt; color:var(--blue-deep); margin-bottom:10px;">이젠 모바일 쿠폰으로 사은품을 전달하세요.</div>
+      <div class="sub-detail" style="font-size:9.5pt; color:var(--text); line-height:1.6;">
+        • 정가보다 <strong>최대 20% 저렴하게!</strong><br>
+        • 번호만 입력하면, <strong>한 번에 단체 발송.</strong>
+      </div>
+    </div>
+    <div class="hero-qr">
+      <div class="qr-bubble">신청하고 스타벅스 쿠폰 받기</div>
+      <div class="qr-img"><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://iumgift.co.kr" alt="QR"></div>
+    </div>
+    <div class="hero-features">
+      <div class="hero-feat"><i data-lucide="smartphone"></i><strong>모바일 쿠폰,상품권 전용</strong><span>운영 부담 최소화</span></div>
+      <div class="hero-feat"><i data-lucide="sliders-horizontal"></i><strong>예산 맞춤 상품 선정</strong><span>다양한 가격대 구성</span></div>
+      <div class="hero-feat"><i data-lucide="send"></i><strong>50명 이상 대량 발송·관리</strong><span>간편한 운영</span></div>
+      <div class="hero-feat"><i data-lucide="check-circle-2"></i><strong>정산까지 한번에</strong><span>실무 부담 최소화</span></div>
+    </div>
+  </div>
+
+  <div class="reasons">
+    <h2>이음기프트가 대학 현장에 필요한 이유</h2>
+    <div class="reasons-grid" style="grid-template-columns:repeat(3,1fr);">
+      <div class="reason"><div class="reason-icon-wrap"><span class="num">01</span><i data-lucide="send"></i></div><strong>선물 전달 방식 간소화</strong><p>모바일로 즉시 보낼 수 있습니다.</p></div>
+      <div class="reason"><div class="reason-icon-wrap"><span class="num">02</span><i data-lucide="piggy-bank"></i></div><strong>최대 20% 비용 절감</strong><p>대량 구매 할인 혜택이 쏟아집니다.</p></div>
+      <div class="reason"><div class="reason-icon-wrap"><span class="num">03</span><i data-lucide="sparkles"></i></div><strong>업무 프로세스 최소화</strong><p>AI 문구를 통한 적절한 문구가 생성됩니다.</p></div>
+      <div class="reason"><div class="reason-icon-wrap"><span class="num">04</span><i data-lucide="package-x"></i></div><strong>배송·재고 관리 없는 편리함</strong><p>실물 상품 부담이 없습니다.</p></div>
+      <div class="reason"><div class="reason-icon-wrap"><span class="num">05</span><i data-lucide="receipt"></i></div><strong>증빙자료 자동 발행</strong><p>비용처리가 간편하여 편리합니다.</p></div>
+      <div class="reason"><div class="reason-icon-wrap"><span class="num">06</span><i data-lucide="hand-helping"></i></div><strong>누구나 쉽게 상품 지급</strong><p>학생회·행정팀·학과 모두 쉽게 사용할 수 있습니다.</p></div>
+    </div>
+  </div>
+
+  <!-- Brand Info -->
+  <div class="brand-section">
+    <div class="brand-right">
+      <h2 style="font-size:12pt;font-weight:800;color:var(--blue-deep);margin-bottom:10px;display:flex;align-items:center;gap:6px">이음기프트에서 보낼 수 있어요</h2>
+      <div>
+        <div class="section-label">다양한 브랜드</div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:4px;align-items:center;">
+          <span style="display:inline-block;padding:3px 7px;border-radius:5px;font-size:6.5pt;font-weight:700;background:#00704A;color:#fff;">스타벅스</span>
+          <span style="display:inline-block;padding:3px 7px;border-radius:5px;font-size:6.5pt;font-weight:700;background:#F5C400;color:#1a1a1a;">메가커피</span>
+          <span style="display:inline-block;padding:3px 7px;border-radius:5px;font-size:6.5pt;font-weight:700;background:#003D99;color:#fff;">이디야</span>
+          <span style="display:inline-block;padding:3px 7px;border-radius:5px;font-size:6.5pt;font-weight:700;background:#C8102E;color:#fff;">BBQ</span>
+          <span style="display:inline-block;padding:3px 7px;border-radius:5px;font-size:6.5pt;font-weight:700;background:#E9521B;color:#fff;">BHC</span>
+          <span style="display:inline-block;padding:3px 7px;border-radius:5px;font-size:6.5pt;font-weight:700;background:#6C2C91;color:#fff;">CU</span>
+          <span style="display:inline-block;padding:3px 7px;border-radius:5px;font-size:6.5pt;font-weight:700;background:#0089CF;color:#fff;">GS25</span>
+          <span style="display:inline-block;padding:3px 7px;border-radius:5px;font-size:6.5pt;font-weight:700;background:#2AC1BC;color:#fff;">배달의민족</span>
+          <span style="display:inline-block;padding:3px 7px;border-radius:5px;font-size:6.5pt;font-weight:700;background:#9BCA3C;color:#1a1a1a;">올리브영</span>
+          <span style="display:inline-block;padding:3px 7px;border-radius:5px;font-size:6.5pt;font-weight:700;background:#03C75A;color:#fff;">네이버페이</span>
+          <span style="display:inline-block;padding:3px 6px;border-radius:5px;font-size:6.5pt;font-weight:600;background:var(--line);color:var(--sub);">외 20여개 브랜드</span>
+        </div>
+      </div>
+      <div>
+        <div class="section-label" style="margin-top:8px;">상황별로 보내는 상품을 다르게</div>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:5px;">
+          <div style="background:var(--blue-light);border-radius:8px;padding:8px 6px;text-align:center;">
+            <i data-lucide="clipboard-list" style="width:18px;height:18px;color:var(--blue);display:block;margin:0 auto 10px;"></i>
+            <strong style="font-size:7pt;color:var(--text);display:block;margin-bottom:0;line-height:1.1;">설문·조사</strong>
+            <span style="font-size:6.5pt;color:var(--muted);">경품 일괄 발송</span>
+          </div>
+          <div style="background:var(--blue-light);border-radius:8px;padding:8px 6px;text-align:center;">
+            <i data-lucide="party-popper" style="width:18px;height:18px;color:var(--blue);display:block;margin:0 auto 10px;"></i>
+            <strong style="font-size:7pt;color:var(--text);display:block;margin-bottom:0;line-height:1.1;">축제·행사</strong>
+            <span style="font-size:6.5pt;color:var(--muted);">부스 경품 전송</span>
+          </div>
+          <div style="background:var(--blue-light);border-radius:8px;padding:8px 6px;text-align:center;">
+            <i data-lucide="users" style="width:18px;height:18px;color:var(--blue);display:block;margin:0 auto 10px;"></i>
+            <strong style="font-size:7pt;color:var(--text);display:block;margin-bottom:0;line-height:1.1;">OT · MT</strong>
+            <span style="font-size:6.5pt;color:var(--muted);">환영 선물</span>
+          </div>
+          <div style="background:var(--blue-light);border-radius:8px;padding:8px 6px;text-align:center;">
+            <i data-lucide="trophy" style="width:18px;height:18px;color:var(--blue);display:block;margin:0 auto 10px;"></i>
+            <strong style="font-size:7pt;color:var(--text);display:block;margin-bottom:0;line-height:1.1;">공모전·대회</strong>
+            <span style="font-size:6.5pt;color:var(--muted);">즉시 시상</span>
+          </div>
+          <div style="background:var(--blue-light);border-radius:8px;padding:8px 6px;text-align:center;">
+            <i data-lucide="heart" style="width:18px;height:18px;color:var(--blue);display:block;margin:0 auto 10px;"></i>
+            <strong style="font-size:7pt;color:var(--text);display:block;margin-bottom:0;line-height:1.1;">감사 선물</strong>
+            <span style="font-size:6.5pt;color:var(--muted);white-space:nowrap;letter-spacing:-0.5px;">조교·장학생 보상</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="assets/phone_mockup.png" alt="이음기프트 모바일 쿠폰" class="phone-img">
+  </div>
+
+  <!-- 사용방법 (v3 parchment tile) -->
+  <div class="tile-parchment">
+    <h2>캠퍼스 파트너 도입 안내</h2>
+    <div class="steps-flow" style="grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;">
+      <div class="step-card"><div class="step-num">1</div><div class="step-title">도입 문의</div><div class="step-desc">전담 매니저 상담을 통한<br>제휴 조건 협의 및 계정 발급</div></div>
+      <div class="step-arrow">→</div>
+      <div class="step-card"><div class="step-num">2</div><div class="step-title">예산 맞춤 세팅</div><div class="step-desc">행사 목적과 예산에 최적화된<br>맞춤형 상품 라인업 구성</div></div>
+      <div class="step-arrow">→</div>
+      <div class="step-card"><div class="step-num">3</div><div class="step-title">쿠폰 특가 결제</div><div class="step-desc">대학·기관 전용 혜택이 적용된<br>최대 20% 특별 할인가 결제</div></div>
+      <div class="step-arrow">→</div>
+      <div class="step-card"><div class="step-num">4</div><div class="step-title">대량 발송·정산</div><div class="step-desc">엑셀 업로드로 수천 건 동시 발송<br>및 간편한 증빙 서류 발급</div></div>
+    </div>
+  </div>
+
+  <!-- Footer Bar (v3 style) -->
+  <div class="footer-bar" style="display:flex;justify-content:space-between;align-items:center;">
+    <span>이음기프트 · (주)데브늄</span>
+    <span style="display:flex;align-items:center;gap:12px;">
+      <span style="font-weight:700;">제휴 문의</span>
+      <span>1566-2373</span>
+      <span>help@devnium.com</span>
+      <span style="color:#fff;font-weight:600;">상담 후 가입시 추가 혜택을 드려요!</span>
+    </span>
+  </div>
+</div>
+
+<!-- ===== PAGE 2 · 뒷면 ===== -->
+<div class="page">
+
+  <!-- Nav -->
+  <div class="global-nav" style="background:var(--blue-deep); padding:8px 32px;">
+    <div class="brand">이음기프트 — 프로모션 안내</div>
+    <div class="nav-right"><span>캠퍼스 파트너</span><span>·</span><span>대학 전용 프로그램</span></div>
+  </div>
+
+  <!-- Section 3: 상품 카탈로그 -->
+  <div class="tile-light" style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:8px;background:linear-gradient(135deg,#EBF3FD,#D6E8FA); padding:16px 32px;">
+    <h2 style="display:flex;align-items:center;gap:8px; font-size:11pt; margin-bottom:8px;">인기 모바일 쿠폰 할인가</h2>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;">
+
+            <!-- 메가커피 -->
+      <div style="background:#fff;border-radius:8px;overflow:hidden;position:relative;">
+        <div style="position:absolute;top:6px;right:6px;background:#E85A3D;color:#fff;font-size:7.5pt;font-weight:800;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:1;">15%</div>
+        <img src="assets/thumb_megacoffee.png" style="width:100%;height:56px;object-fit:contain;display:block;background:#fff;">
+        <div style="padding:5px 6px;">
+          <div style="font-size:7.5pt;font-weight:600;color:#1a1a1a;margin-bottom:1px;">메가커피 아메리카노</div>
+          <div style="font-size:7.5pt;color:#999;text-decoration:line-through;">정가 2,000원</div>
+          <div style="font-size:9pt;font-weight:800;color:#E85A3D;">제휴가 1,700원</div>
+        </div>
+      </div>
+
+            <!-- 스타벅스 -->
+      <div style="background:#fff;border-radius:8px;overflow:hidden;position:relative;">
+        <div style="position:absolute;top:6px;right:6px;background:#E85A3D;color:#fff;font-size:7.5pt;font-weight:800;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:1;">15%</div>
+        <img src="assets/thumb_starbucks.png" style="width:100%;height:56px;object-fit:contain;display:block;background:#fff;">
+        <div style="padding:5px 6px;">
+          <div style="font-size:7.5pt;font-weight:600;color:#1a1a1a;margin-bottom:1px;">스타벅스 아메리카노 T</div>
+          <div style="font-size:7.5pt;color:#999;text-decoration:line-through;">정가 4,700원</div>
+          <div style="font-size:9pt;font-weight:800;color:#E85A3D;">제휴가 4,000원</div>
+        </div>
+      </div>
+
+            <!-- CU -->
+      <div style="background:#fff;border-radius:8px;overflow:hidden;position:relative;">
+        <div style="position:absolute;top:6px;right:6px;background:#E85A3D;color:#fff;font-size:7.5pt;font-weight:800;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:1;">15%</div>
+        <img src="assets/thumb_cu.png" style="width:100%;height:56px;object-fit:contain;display:block;background:#fff;">
+        <div style="padding:5px 6px;">
+          <div style="font-size:7.5pt;font-weight:600;color:#1a1a1a;margin-bottom:1px;">CU 모바일 금액권</div>
+          <div style="font-size:7.5pt;color:#999;text-decoration:line-through;">정가 10,000원</div>
+          <div style="font-size:9pt;font-weight:800;color:#E85A3D;">제휴가 8,500원</div>
+        </div>
+      </div>
+
+            <!-- 네이버페이 -->
+      <div style="background:#fff;border-radius:8px;overflow:hidden;position:relative;">
+        <div style="position:absolute;top:6px;right:6px;background:#E85A3D;color:#fff;font-size:7.5pt;font-weight:800;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:1;">15%</div>
+        <img src="assets/thumb_naverpay.png" style="width:100%;height:56px;object-fit:contain;display:block;background:#fff;">
+        <div style="padding:5px 6px;">
+          <div style="font-size:7.5pt;font-weight:600;color:#1a1a1a;margin-bottom:1px;">네이버페이 포인트</div>
+          <div style="font-size:7.5pt;color:#999;text-decoration:line-through;">정가 10,000원</div>
+          <div style="font-size:9pt;font-weight:800;color:#E85A3D;">제휴가 8,500원</div>
+        </div>
+      </div>
+
+            <!-- BBQ -->
+      <div style="background:#fff;border-radius:8px;overflow:hidden;position:relative;">
+        <div style="position:absolute;top:6px;right:6px;background:#E85A3D;color:#fff;font-size:7.5pt;font-weight:800;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:1;">15%</div>
+        <img src="assets/thumb_bbq.png" style="width:100%;height:56px;object-fit:contain;display:block;background:#fff;">
+        <div style="padding:5px 6px;">
+          <div style="font-size:7.5pt;font-weight:600;color:#1a1a1a;margin-bottom:1px;">BBQ 황올+콜라 세트</div>
+          <div style="font-size:7.5pt;color:#999;text-decoration:line-through;">정가 22,000원</div>
+          <div style="font-size:9pt;font-weight:800;color:#E85A3D;">제휴가 18,700원</div>
+        </div>
+      </div>
+
+            <!-- 올리브영 -->
+      <div style="background:#fff;border-radius:8px;overflow:hidden;position:relative;">
+        <div style="position:absolute;top:6px;right:6px;background:#E85A3D;color:#fff;font-size:7.5pt;font-weight:800;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:1;">15%</div>
+        <img src="assets/thumb_oliveyoung.png" style="width:100%;height:56px;object-fit:contain;display:block;background:#fff;">
+        <div style="padding:5px 6px;">
+          <div style="font-size:7.5pt;font-weight:600;color:#1a1a1a;margin-bottom:1px;">올리브영 상품권 3만원</div>
+          <div style="font-size:7.5pt;color:#999;text-decoration:line-through;">정가 30,000원</div>
+          <div style="font-size:9pt;font-weight:800;color:#E85A3D;">제휴가 25,500원</div>
+        </div>
+      </div>
+
+            <!-- 배달의민족 -->
+      <div style="background:#fff;border-radius:8px;overflow:hidden;position:relative;">
+        <div style="position:absolute;top:6px;right:6px;background:#E85A3D;color:#fff;font-size:7.5pt;font-weight:800;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:1;">15%</div>
+        <img src="assets/thumb_baemin.png" style="width:100%;height:56px;object-fit:contain;display:block;background:#fff;">
+        <div style="padding:5px 6px;">
+          <div style="font-size:7.5pt;font-weight:600;color:#1a1a1a;margin-bottom:1px;">배민 상품권 5만원</div>
+          <div style="font-size:7.5pt;color:#999;text-decoration:line-through;">정가 50,000원</div>
+          <div style="font-size:9pt;font-weight:800;color:#E85A3D;">제휴가 42,500원</div>
+        </div>
+      </div>
+
+            <!-- 신세계 -->
+      <div style="background:#fff;border-radius:8px;overflow:hidden;position:relative;">
+        <div style="position:absolute;top:6px;right:6px;background:#E85A3D;color:#fff;font-size:7.5pt;font-weight:800;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:1;">15%</div>
+        <img src="assets/thumb_shinseage.png" style="width:100%;height:56px;object-fit:contain;display:block;background:#fff;">
+        <div style="padding:5px 6px;">
+          <div style="font-size:7.5pt;font-weight:600;color:#1a1a1a;margin-bottom:1px;">신세계 상품권 5만원</div>
+          <div style="font-size:7.5pt;color:#999;text-decoration:line-through;">정가 50,000원</div>
+          <div style="font-size:9pt;font-weight:800;color:#E85A3D;">제휴가 42,500원</div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- Section 2-2: 상담 추가 할인 프로모션 혜택 -->
+  <div class="tile-light" style="flex:0 0 auto; padding:16px 32px;">
+    <h3 style="font-size:10pt;font-weight:700;color:var(--ink);margin:0 0 6px;">상담 추가 할인 프로모션 혜택</h3>
+    <div class="savings-grid" style="gap:12px;">
+      <div>
+        <div style="font-size:7.5pt;font-weight:600;color:var(--ink);margin-bottom:4px;">커피·치킨·편의점 쿠폰 추가 할인</div>
+        <table class="budget-table">
+          <thead><tr><th>거래금액</th><th>기본할인</th><th>추가 할인</th></tr></thead>
+          <tbody>
+            <tr><td>~3백만원</td><td>15%</td><td class="price">최대 3%</td></tr>
+            <tr><td>~5백만원</td><td>15%</td><td class="price">최대 5%</td></tr>
+            <tr><td>~1천만원</td><td>15%</td><td class="price">최대 7%</td></tr>
+            <tr><td>1천만원~</td><td>15%</td><td class="price">최대 10%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div style="font-size:7.5pt;font-weight:600;color:var(--ink);margin-bottom:4px;">상품권·포인트 추가 할인</div>
+        <table class="budget-table">
+          <thead><tr><th>거래금액</th><th>기본할인</th><th>추가 할인</th></tr></thead>
+          <tbody>
+            <tr><td>~3백만원</td><td>15%</td><td class="price">최대 1%</td></tr>
+            <tr><td>~5백만원</td><td>15%</td><td class="price">최대 2%</td></tr>
+            <tr><td>~1천만원</td><td>15%</td><td class="price">최대 3%</td></tr>
+            <tr><td>1천만원~</td><td>15%</td><td class="price">최대 5%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="margin-top:6px;font-size:7.5pt;color:var(--ink-48);">※ 추가 할인은 거래 조건에 따라 추가 옵션 협의가 가능합니다.<br>※ 예산 소진 시 종료</div>
+  </div>
+
+  <!-- Section 1: 활용 사례 -->
+  <div class="tile-parchment" style="padding:16px 32px;">
+    <h2 style="display:flex;align-items:center;gap:8px; font-size:11pt; margin-bottom:10px;">이런 상황에서 사용하고 있어요</h2>
+    <div class="reasons-grid">
+      <div class="reason-card" style="color:var(--ink)"><i data-lucide="book-open" style="color:var(--primary)"></i><strong style="color:var(--ink)">참여형 이벤트 보상</strong><p style="color:var(--ink-48)">강연·워크숍·특강·비교과 참석자</p></div>
+      <div class="reason-card" style="color:var(--ink)"><i data-lucide="clipboard-list" style="color:var(--primary)"></i><strong style="color:var(--ink)">설문·연구 참여 보상</strong><p style="color:var(--ink-48)">학회·논문·연구실·만족도 조사</p></div>
+      <div class="reason-card" style="color:var(--ink)"><i data-lucide="party-popper" style="color:var(--primary)"></i><strong style="color:var(--ink)">행사·축제 경품</strong><p style="color:var(--ink-48)">축제·공모전·동아리·학생회</p></div>
+      <div class="reason-card" style="color:var(--ink)"><i data-lucide="hand-heart" style="color:var(--primary)"></i><strong style="color:var(--ink)">웰컴 기프트</strong><p style="color:var(--ink-48)">신입생 OT·입학식·유학생 환영</p></div>
+      <div class="reason-card" style="color:var(--ink)"><i data-lucide="coffee" style="color:var(--primary)"></i><strong style="color:var(--ink)">시험기간 간식 지원</strong><p style="color:var(--ink-48)">중간·기말 기간 간식 쿠폰</p></div>
+      <div class="reason-card" style="color:var(--ink)"><i data-lucide="briefcase" style="color:var(--primary)"></i><strong style="color:var(--ink)">취업·진로 리워드</strong><p style="color:var(--ink-48)">취업박람회·모의면접·진로캠프</p></div>
+      <div class="reason-card" style="color:var(--ink)"><i data-lucide="megaphone" style="color:var(--primary)"></i><strong style="color:var(--ink)">캠페인 참여 유도</strong><p style="color:var(--ink-48)">안전·금연·도서관 활성화</p></div>
+      <div class="reason-card" style="color:var(--ink)"><i data-lucide="heart" style="color:var(--primary)"></i><strong style="color:var(--ink)">감사 선물</strong><p style="color:var(--ink-48)">교직원·조교·운영진 격려</p></div>
+    </div>
+  </div>
+
+  <!-- Section 2: 절약 + 예산 추천 -->
+  <div class="tile-light" style="padding:16px 32px;">
+    <h2 style="display:flex;align-items:center;gap:8px; font-size:11pt; margin-bottom:10px;">대량 구매할수록 절약이 쌓입니다</h2>
+    <div class="savings-grid" style="align-items:stretch;">
+      <div>
+        <table class="budget-table">
+          <thead><tr><th>예산대</th><th>추천 상품</th><th>활용</th></tr></thead>
+          <tbody>
+            <tr><td class="price">2,000원대</td><td>메가커피 아메리카노</td><td>설문 사은품</td></tr>
+            <tr><td class="price">4,000원대</td><td>스타벅스 아메리카노 T</td><td>OT 환영선물</td></tr>
+            <tr><td class="price">7,000원대</td><td>CU / GS25 금액권</td><td>축제 경품</td></tr>
+            <tr><td class="price">10,000원대</td><td>네이버페이 포인트</td><td>공모전 시상</td></tr>
+            <tr><td class="price">20,000원대</td><td>BBQ 황금올리브+콜라</td><td>축제 대상</td></tr>
+          </tbody>
+        </table>
+        <div style="font-size:7pt;color:var(--ink-48);margin-top:4px">※ 전 상품 정가 이하 B2B 특가 · 유효기간 30일</div>
+      </div>
+      <div class="savings-box" style="background:#f9fafb; border:1px solid var(--line); border-radius:8px; padding:12px; position:relative; overflow:hidden;">
+        <div class="stitle">예시) 스타벅스 아메리카노 T 기준</div>
+        <div class="example" style="display:flex;align-items:center;justify-content:space-between;gap:8px;line-height:1.4;padding-right:0;">
+          <div style="flex:1; position:relative; z-index:2;">
+            <div style="font-size:7.5pt; color:#999; text-decoration:line-through; margin-bottom:1px;">정가 4,700원</div>
+            <div style="font-size:11.5pt; font-weight:800; color:#E85A3D; margin-bottom:4px;">제휴가 4,000원 <span style="font-size:8.5pt; font-weight:700;">(약 15% 절약)</span></div>
+            <div style="font-size:8pt; color:var(--sub); padding-top:4px; width:70%;">
+              100개 발송 시 → <span class="hl" style="font-weight:700;">약 70,000원 절약</span><br>
+              200개 발송 시 → <span class="hl" style="font-weight:700;">약 140,000원 절약</span>
+            </div>
+          </div>
+          <img src="assets/starbucks_real_coffee.png" style="width:180px; height:180px; object-fit:contain; position:absolute; right:-25px; bottom:-25px; mix-blend-mode:multiply; z-index:1; opacity:0.8;">
+        </div>
+        <div class="note" style="margin-top:8px; line-height:1.4; padding-top:2px;">
+          * 상품별 할인 폭은 상이할 수 있습니다.<br>
+          * 상담 시 추가 할인이 가능합니다.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer-bar" style="display:flex;justify-content:space-between;align-items:center;">
+    <span>이음기프트 · (주)데브늄</span>
+    <span style="display:flex;align-items:center;gap:12px;">
+      <span style="font-weight:700;">제휴 문의</span>
+      <span>1566-2373</span>
+      <span>help@devnium.com</span>
+      <span style="color:#fff;font-weight:600;">상담 후 가입시 추가 혜택을 드려요!</span>
+    </span>
+  </div>
+
+</div>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>
